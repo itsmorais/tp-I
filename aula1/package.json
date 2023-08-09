@@ -11,7 +11,12 @@
     "quatro": "npx ts-node ./src/exercicio4",
     "cinco": "npx ts-node ./src/exercicio5",
     "seis": "npx ts-node ./src/exercicio6",
-    "sete": "npx ts-node ./src/exercicio7"
+    "sete": "npx ts-node ./src/exercicio7",
+    "oito": "npx ts-node ./src/exercicio8",
+    "nove": "npx ts-node ./src/exercicio9",
+    "dez": "npx ts-node ./src/exercicio10",
+
+    "teste": "npx ts-node ./src/teste"
   },
   "keywords": [],
   "author": "",
