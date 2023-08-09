@@ -25,7 +25,7 @@ A vantagem da tipagem estática é o erro de atribuição ser detectado em tempo
 Na linguagem TS podemos definir o tipo de dados de uma variável de várias maneiras. A seguir tem-se as duas mais comuns:
 
 - Inferência de tipo
- - O TS pode inferir o tipo de uma variável com base no valor atribuído a ela
+    - O TS pode inferir o tipo de uma variável com base no valor atribuído a ela
 
 ```ts
 let nome = "Isabella"; // TS infere tipo string
@@ -105,3 +105,61 @@ outroTeste = [1,2,3];
 outroTeste = ["a","b","c"];
 outroTeste = [1,"a",2]; //ERROR
  ```
+
+ #### Função no typescript
+ No TS podemos fazer a anotação de tipo(tipagem) de dado dos parâmetros e do retorno da função
+
+ ```ts
+ // a função foi anotada com retorno void pelo fato de a função não ter return no seu corpo
+function somar(a:number,b:number):void{
+    const resultado = a + b;
+    console.log("Resultado:",resultado);
+}
+
+function subtracao(a:number,b:number):number{
+    return a - b;
+}
+
+somar(10,5); // Resultado: 15
+console.log(subtracao(9,3)); // 6
+ ```
+
+- Parâmetro condicional:
+O tipo condicional é definido colocando ? após a declaração da variável. Desta forma, a variável terá valor undefined se ela não receber valor como parâmetro
+
+```ts
+function soma(a:number,b?:number):number{
+if(b){ // se B não for undefined
+    return a + b
+}else{
+    return a
+}
+}
+
+console.log(soma(4,5)); // 9
+console.log(soma(4)); // 4
+```
+
+- Declarar função
+    - Função nomeada
+    ```ts
+    function dif(a:number,b:number):number{
+    return a - b;
+    }
+    ```
+    - Função anônima
+    ```ts
+    const somar = function(a:number,b:number):number{
+    return a + b;
+    }
+    ```
+    - Arrow function
+    ```ts
+    const mult = (a: number, b: number):number => {
+    return a * b;
+    };
+    
+    const div = (a: number, b: number):number => a / b;
+    const pow = (a: number, b: number):number => { return a ** b };
+    ```
+
