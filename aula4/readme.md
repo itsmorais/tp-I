@@ -91,3 +91,21 @@ console.log(pessoa.nome); // Método get = Bella
 
 
 ```
+Observação: os acessos get e set não podem ter o mesmo nome da propriedade.
+
+## Propriedades de parâmetro:
+No TS, as propriedades de parâmetro (parameter properties, em inglês) são uma sintaxe simplificada para definir e inicializar propriedades de uma classe diretamente nos parâmetros do construtor. Essa abordagem economiza tempo e reduz a repetição de código, tornando mais fácil declarar e atribuir valores às propriedades de uma classe em um único local.
+```ts
+class Pessoa {
+    //as propriedades são definidas nos parâmetros do construtor
+    constructor(public nome: string, private idade: number, readonly genero: string) {
+        // as propriedades são inicializadas nos parâmetros
+    }
+    public print(): void {
+        console.log(this.nome, this.idade, this.genero);
+    }
+}
+const p = new Pessoa("Isabella", 23, "F");
+p.print();
+
+```
