@@ -65,3 +65,29 @@ definidos. Membros privados não podem ser acessados fora da classe ou por meio 
 subclasses que herdam da classe onde os membros são definidos. Os membros protegidos não podem ser acessados
 fora da classe ou por meio de instâncias da classe
 
+## Getters e Setters
+Os getters e setters são recursos que permitem controlar o acesso e a atribuição de valores às propriedades de uma classe. Eles permitem definir comportamentos personalizados para a leitura (getter) e escrita (setter) de propriedades, em vez de simplesmente obter ou atribuir valores diretamente.
+```ts
+class Pessoa {
+    private _nome: string;
+
+    constructor(_nome: string) {
+        this._nome = _nome;
+    }
+
+    get nome(): string {
+        return this._nome;
+    }
+    set nome(_nome: string) {
+        this._nome = _nome;
+    }
+}
+
+const pessoa = new Pessoa("Isabella");
+console.log(pessoa.nome); // Método get = Isabella
+
+pessoa.nome = "Bella" // Método set
+console.log(pessoa.nome); // Método get = Bella
+
+
+```
